@@ -1,0 +1,30 @@
+let raceNumber = Math.floor(Math.random() * 1000);
+let earlyAdultRegistration = true;
+let runnersAge = 18;
+
+if (earlyAdultRegistration && runnersAge > 18){
+  raceNumber += 1000 ;
+} else {
+  raceNumber;
+}
+// console.log(raceNumber);
+
+let raceTime = "";
+if (earlyAdultRegistration && runnersAge > 18){
+raceTime = "9:30 AM";
+} else if (earlyAdultRegistration === false && runnersAge > 18) {
+raceTime = "11:00 AM";
+} else if (runnersAge < 18) {
+raceTime = "12:30 PM";
+} 
+// console.log(raceTime);
+
+if (earlyAdultRegistration && runnersAge > 18){
+console.log(`Adult Runner ${raceNumber} Your Race Starts at ${raceTime}`);
+} else if (earlyAdultRegistration === false && runnersAge > 18) {
+console.log(`Adult Runner ${raceNumber} You Registered Late so your Race Starts at ${raceTime}`);
+} else if (runnersAge < 18) {
+console.log(`Youth Registrant Runner ${raceNumber} Your Race Starts at ${raceTime}`);
+} else if (runnersAge = 18) {
+console.log("Please visit registration desk");
+}
