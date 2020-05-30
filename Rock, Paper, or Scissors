@@ -1,0 +1,51 @@
+const getUserChoice = function (userInput) { 
+  if (userInput === "rock") {return userInput.toLowerCase()} else if (userInput === "scissors") {return userInput.toLowerCase()}  else if (userInput === "paper") {return userInput.toLowerCase()} else if (userInput === "bomb") {return userInput.toLowerCase()} else {return "Error"}
+}
+
+
+const getComputerChoice = () => {
+  if (Math.floor(Math.random()*3) === 0) { return "rock"} else if (Math.floor(Math.random()*3) === 1) { return "paper"} else if (Math.floor(Math.random()*3) === 2) { return "scissors"}
+  }
+// console.log(getComputerChoice())
+
+function determineWinner (UserChoice, ComputerChoice) {
+if (UserChoice === ComputerChoice) {
+  return "Game was a Tie";
+ } else if (UserChoice === 'rock') {
+   if (ComputerChoice === "paper"){
+     return "Computer Won";
+   } else if (ComputerChoice === "scissors") {
+     return "User Won";
+   }
+ } else if (UserChoice === 'paper') {
+   if (ComputerChoice === "scissors") {
+     return "Computer Won";
+   } else if (ComputerChoice === "rock") {
+     return "User Won";
+   }
+ } else if (UserChoice === 'scissors') {
+   if (ComputerChoice === "paper") {
+     return "Computer Won";
+   } else if (ComputerChoice === "rock") {
+     return "User Won";
+   }
+ } else if (UserChoice === "bomb") {
+   if (ComputerChoice === "paper") {
+     return "User Won";
+   } else if (ComputerChoice === "rock") {
+     return "User Won";
+   } else if (ComputerChoice === "scissors") {
+     return "User Won";
+   }
+ }
+}   
+//console.log(determineWinner( "scissors","rock"))
+
+const playGame = function (){
+  const UserChoice = getUserChoice ("paper");
+  const ComputerChoice = getComputerChoice ();
+  console.log("You Threw " + UserChoice);
+  console.log("The Computer Threw " + ComputerChoice);
+  console.log(determineWinner(UserChoice,ComputerChoice));
+}
+playGame()
